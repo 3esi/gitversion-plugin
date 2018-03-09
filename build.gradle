@@ -36,8 +36,8 @@ group = "net.karlmartens.gitversion"
 // The configuration example below shows the minimum required properties
 // configured to publish your plugin to the plugin portal
 pluginBundle {
-  website = 'https://github.com/karlmartens/gitversion-plugin'
-  vcsUrl = 'https://github.com/karlmartens/gitversion-plugin.git'
+  website = 'https://github.com/3esi/gitversion-plugin'
+  vcsUrl = 'https://github.com/3esi/gitversion-plugin.git'
   description = 'Use Git to determine build version plugin'
   tags = ['Git', 'version', 'build']
 
