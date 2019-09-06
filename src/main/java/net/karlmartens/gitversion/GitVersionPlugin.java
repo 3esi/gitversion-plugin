@@ -60,7 +60,7 @@ public class GitVersionPlugin implements Plugin<Project> {
     }
 
     private static Optional<VersionInfo> gitVersion(Project project) {
-        String out = exec(project, gitExecutable(), "describe", "--tags", "--long");
+        String out = exec(project, gitExecutable(), "describe", "--tags", "--long", "--first-parent");
         return VersionInfo.fromString(out);
     }
 
@@ -102,7 +102,7 @@ public class GitVersionPlugin implements Plugin<Project> {
         }
 
         public static Optional<VersionInfo> fromString(String out) {
-            Pattern pattern = Pattern.compile("^([0-9]+\\.[0-9]+\\.[0-9]+)(.*)-([0-9]+)-g([0-9a-f]{7})\\r?\\n?$");
+            Pattern pattern = Pattern.compile("^([0-9]+\\.[0-9]+\\.[0-9]+)(.*)-([0-9]+)-g([0-9a-f]+)\\r?\\n?$");
             Matcher matcher = pattern.matcher(out);
             if (matcher.matches()) {
                 VersionInfo info = new VersionInfo(matcher.group(1), matcher.group(3), matcher.group(2), matcher.group(4));
@@ -158,7 +158,7 @@ public class GitVersionPlugin implements Plugin<Project> {
                     .findFirst()
                     .map(s -> s.substring(1).trim())
                     .map(BranchInfo::new);
-        };
+        }
 
         private String shortName() {
             if (!isFeature)

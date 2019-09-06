@@ -2,7 +2,6 @@ package net.karlmartens.gitversion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
 import net.karlmartens.gitversion.GitVersionPlugin.VersionInfo;
 import net.karlmartens.gitversion.GitVersionPlugin.BranchInfo;
 import org.junit.jupiter.params.ParameterizedTest;

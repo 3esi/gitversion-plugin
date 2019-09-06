@@ -11,6 +11,10 @@ buildscript {
 }
 
 apply plugin: "com.gradle.plugin-publish"
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
 // Apply other plugins here, e.g. java plugin for a plugin written in java or
 // the groovy plugin for a plugin written in groovy
 
@@ -34,7 +38,7 @@ dependencies {
 
 // Unless overridden in the pluginBundle config DSL, the project version will
 // be used as your plugin version when publishing
-version = "0.0.3"
+version = "0.0.4"
 group = "net.karlmartens.gitversion"
 
 // The configuration example below shows the minimum required properties
